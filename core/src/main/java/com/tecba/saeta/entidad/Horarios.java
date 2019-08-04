@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
@@ -16,18 +17,14 @@ public class Horarios {
     private UUID id;
 
     @NotNull(message = "ID de horario es requerido")
-    private int idHorarios;
+    private LocalDateTime idHorarios;
 
     @NotNull(message = "Hora inicio es requerido")
-    private int horaInicio;
+    private LocalDateTime horaInicio;
 
 
     @NotNull(message = "Hora fin es requerida")
-    private int horaFin;
-
-    public String getHorario(){
-        return idHorarios + " " + horaInicio + " " + horaFin;
-    }
+    private LocalDateTime horaFin;
 
 
 }

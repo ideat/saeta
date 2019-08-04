@@ -1,6 +1,10 @@
 package com.tecba.saeta.entidad;
 
 import lombok.Getter;
+import lombok.Setter;
+
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 
@@ -16,9 +20,6 @@ public class Carrera {
 	
 	@NotNull(message = "Elija que Facultad")
     public String facultad;
-    
-	
-    public String getNombreCarrera();
-    {
-        return NombreCarrera + " " + responsable + " " + facultad " ";
-    }
+
+
+}

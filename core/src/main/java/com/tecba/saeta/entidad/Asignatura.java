@@ -1,9 +1,10 @@
+package com.tecba.saeta.entidad;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import javax.validation.constraints.Pattern;
 import java.util.UUID;
 
 @Getter
@@ -11,24 +12,16 @@ import java.util.UUID;
 public class Asignatura {
 	private UUID idAsignatura;
 
+	private String codigoInterno;
+
     @NotNull(message = "Primer nombre es requerido")
     private String nombreAsignatura;
     
     private String estado;
-    
 
-    private String ciclo;
-
-    private String parte;
+    private String nivel;
 
 
-    public String getNommbreAsigantura(){
-        return primerNombre + " " + segundoNombre + " " + apellidoPaterno;
-    }
-
-    public String getIdAsigantura(){
-        return id;
-    }
 }
 
 
