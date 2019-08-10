@@ -4,6 +4,7 @@ import com.tecba.saeta.entidad.Docente;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface RepositorioDocente {
 
@@ -12,6 +13,8 @@ public interface RepositorioDocente {
     void actualizar(Docente docente);
 
     Optional<Docente> obtenerPorCarnet(String carnet, String extension);
+
+    Optional<Docente> obtenerPorId(UUID id);
 
     List<Docente> obtenerTodos();
 

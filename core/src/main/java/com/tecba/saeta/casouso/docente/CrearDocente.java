@@ -45,12 +45,12 @@ public class CrearDocente extends CasoUsoBase<Docente> implements CasoUso<Docent
 
     @Override
     protected Optional<Docente> getById() {
-        return Optional.empty();
+        return repositorio.obtenerPorId(this.registro.getId());
     }
 
     @Override
     protected Optional<Docente> getByNaturalKey() {
-        return Optional.empty();
+        return repositorio.obtenerPorCarnet(this.registro.getCarnet(),this.registro.getExtension());
     }
 
     @Override
@@ -60,6 +60,6 @@ public class CrearDocente extends CasoUsoBase<Docente> implements CasoUso<Docent
 
     @Override
     public Optional<Docente> getResultado() {
-        return Optional.empty();
+        return resultado;
     }
 }

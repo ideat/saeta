@@ -4,22 +4,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Getter
 @Setter
 
 public class Carrera {
 	@NotNull(message = "introdusca id de carrera es requerido")
-	public String idCarrera;
+	private String idCarrera;
 	
 	@NotNull(message = "nombres de carreara es requerido")
-	public String nombreCarrera;
+	private String nombreCarrera;
 	
 	@NotNull(message = "nombre del responsable es requerido")
-	public String responsable;
+	private String responsable;
 	
 	@NotNull(message = "Elija que Facultad")
-    public String facultad;
+    private String facultad;
 
 
 }
