@@ -22,7 +22,7 @@ public class CrearDocente extends CasoUsoBase<Docente> implements CasoUso<Docent
 
     public static CrearDocente crear(RepositorioDocente repositorio, Docente registro){
         CrearDocente casoUso = new CrearDocente();
-        casoUso.repositorio = Objects.requireNonNull(repositorio, "'Repositorio Docente' no puede ser omitido");
+        casoUso.repositorio = Objects.requireNonNull(repositorio, "'Repositorio docente' no puede ser omitido");
         casoUso.registro = Objects.requireNonNull(registro, "'Registro docente' no puede ser omitido");
 
         casoUso.validateBean(registro);

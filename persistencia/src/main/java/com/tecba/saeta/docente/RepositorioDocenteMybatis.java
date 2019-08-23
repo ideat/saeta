@@ -1,4 +1,4 @@
-package com.tecba.saeta.Docente;
+package com.tecba.saeta.docente;
 
 import com.tecba.saeta.entidad.Docente;
 import com.tecba.saeta.servicio.data.docente.RepositorioDocente;

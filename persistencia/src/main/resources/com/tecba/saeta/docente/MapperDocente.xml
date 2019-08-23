@@ -1,0 +1,98 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tecba.saeta.docente.MapperDocente">
+    <resultMap id="DocenteMap" type="com.tecba.saeta.entidad.Docente">
+        <id property="id" column="id" typeHandler="com.tecba.saeta.typehandler.UUIDTypeHandler"/>
+        <result property="primerNombre" column="primer_nombre"/>
+        <result property="segundoNombre" column="segundo_nombre"/>
+        <result property="apellidoPaterno" column="apellido_paterno"/>
+        <result property="apellidoMaterno" column="apellido_materno"/>
+        <result property="carnet" column="carnet"/>
+        <result property="extension" column="extension"/>
+        <result property="email" column="email"/>
+        <result property="direccion" column="direccion"/>
+        <result property="celular" column="celular"/>
+        <result property="telfDomicilio" column="telf_domiciliio"/>
+        <result property="profesion" column="profesion"/>
+        <result property="fechaIncorporacion" column="fecha_incorporacion_"/>
+
+
+    </resultMap>
+
+    <insert id="insertarDocete" parameterType="com.tecba.saeta.entidad.Docente">
+
+        insert into workflow.applicant(
+        id,
+        primer_nombre,
+        segundo_nombre,
+        apellido_paterno,
+        apellido_materno,
+        carnet,
+        extension,
+        email,
+        direccion,
+        celular,
+        telf_domicilio,
+        profesion,
+        fecha_incorporacion)
+        values (
+        #{id, typeHandler=com.tecba.saeta.typehandler.UUIDTypeHandler},
+        #{primerNombre},
+        #{segundoNombre},
+        #{apellidoPaterno},
+        #{apellidoMaterno},
+        #{carnet},
+        #{extension},
+        #{email},
+        #{direccion},
+        #{celular},
+        #{telfDomicilio},
+        #{profesion},
+        #{fecha_incorporacion}
+        )
+    </insert>
+
+    <update id="actualizar" parameterType="ccom.tecba.saeta.entidad.Docente">
+        update docente
+        set
+            primer_nombre = #{primerNombre},
+            segundo_nombre = #{segundoNombre},
+            apellido_paterno = #{apellidoPaterno},
+            apellido_materno = #{apellidoMaterno},
+            carnet = #{carnet},
+            extension = #{extension},
+            email = #{email},
+            direccion = #{direccion},
+            celular = #{celular},
+            telf_domicilio = #{telf_domicilio},
+            profesion = #{profesion},
+            fecha_incorporacion = #{fecha_incorporacion}
+        where id = #{id, typeHandler=com.tecba.saeta.typehandler.UUIDTypeHandler}
+
+    </update>
+
+    <select id="getAllApplicant" resultMap="ApplicantMap">
+
+        select *
+        from workflow.applicant
+    </select>
+
+    <select id="obtenerPorCarnet" resultMap="DocenteMap" parameterType="map">
+        select *
+        from docente
+        where carnet = #{carnet}
+    </select>
+
+    <select id="obtenerPorId" resultMap="DocenteMap" parameterType="map">
+        select *
+        from docente
+        where id = #{id, typeHandler=com.tecba.saeta.typehandler.UUIDTypeHandler}
+    </select>
+
+    <select id="obtenerTodos" resultMap="DocenteMap" >
+        select *
+        from docente
+
+    </select>
+
+</mapper>
